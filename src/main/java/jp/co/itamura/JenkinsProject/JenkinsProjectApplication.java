@@ -11,17 +11,31 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class JenkinsProjectApplication implements CommandLineRunner {
+public class JenkinsProjectApplication {
+// implements CommandLineRunner {
 
 	@Autowired
 	JenkinsService service;
 
-	public static void main(String[] args) {
-		SpringApplication.run(JenkinsProjectApplication.class, args);
+//	public static void main(String[] args) {
+//		SpringApplication.run(JenkinsProjectApplication.class, args);
+//	}
+//
+//	@Override
+//	public void run(String... args) throws Exception {
+//		JenkinsDto dto = service.testMethod(1);
+//		System.out.println(dto.getBirthyear());
+//	}
+
+
+	public static void main(String[] args){
+		try (ConfigurableApplicationContext ctx = SpringApplication.run(JenkinsProjectApplication.class, args)) {
+			JenkinsProjectApplication app = ctx.getBean(JenkinsProjectApplication.class);
+			app.run(args);
+		}
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args){
 		JenkinsDto dto = service.testMethod(1);
 		System.out.println(dto.getBirthyear());
 	}

@@ -2,26 +2,25 @@ package jp.co.itamura.JenkinsProject.service;
 
 import jp.co.itamura.JenkinsProject.JenkinsProjectApplication;
 import jp.co.itamura.JenkinsProject.dto.JenkinsDto;
-import org.junit.jupiter.api.Test;
+import jp.co.itamura.JenkinsProject.service.impl.JenkinsServiceImpl;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.*;
 
 @SpringBootTest
+@RunWith(SpringRunner.class)
 public class JenkinsServiceTest {
 
     @Autowired
-    JenkinsService service;
+    private JenkinsService service;
 
     @Test
-    void テストメソッド引数1() {
+    public void テストメソッド引数1() {
 
         JenkinsDto expected = new JenkinsDto();
         expected.setName("板村 亮平");
