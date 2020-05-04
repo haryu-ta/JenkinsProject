@@ -1,11 +1,9 @@
 package jp.co.itamura.JenkinsProject;
 
 
-import com.sun.javafx.tools.ant.Application;
 import jp.co.itamura.JenkinsProject.dto.JenkinsDto;
 import jp.co.itamura.JenkinsProject.service.JenkinsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
